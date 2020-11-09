@@ -1,0 +1,19 @@
+{
+  "name": "shellcoochi",
+  "version": "1.0.0",
+  "description": "shellcoochi-react-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shellcoochi/shellcoochi-react-app.git"
+  },
+  "author": "shellcoochi\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[S",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shellcoochi/shellcoochi-react-app/issues"
+  },
+  "homepage": "https://github.com/Shellcoochi/shellcoochi-react-app#readme"
+}
