@@ -4,6 +4,7 @@ import "./App.css";
 
 class App extends Component{
   render(){
+	  console.error('this is test') // 输出错误
     return(
       <div className="App">
         <h1> Hello, Shellcoochi1! </h1>
