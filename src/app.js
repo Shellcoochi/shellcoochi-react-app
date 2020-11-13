@@ -7,10 +7,10 @@ class App extends Component{
 	  console.error('this is test') // 输出错误
     return(
       <div className="App">
-        <h1> Hello, Shellcoochi1! </h1>
+        <h1> Hello, Shellcoochi! </h1>
       </div>
     );
   }
 }
 
-export default hot(module)(App);;
+export default App;
