@@ -1,1 +1,8 @@
 node_modules/
+yarn-error.log
+.idea/.gitignore
+.idea/misc.xml
+.idea/modules.xml
+.idea/shellcoochi-react-app.iml
+.idea/vcs.xml
+.idea/codeStyles/codeStyleConfig.xml
