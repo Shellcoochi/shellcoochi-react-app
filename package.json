@@ -4,7 +4,7 @@
   "description": "shellcoochi-react-app",
   "main": "index.js",
   "scripts": {
-	"dev": " webpack-dev-server --mode development --config ./config/webpack.config.js --open",
+    "dev": " webpack-dev-server --mode development --config ./config/webpack.config.js --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,10 +26,14 @@
     "css-loader": "^1.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-hot-loader": "4.3.11",
     "style-loader": "^0.23.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.8",
-    "react-hot-loader": "4.3.11"
+	"portfinder": "^1.0.28"
+  },
+  "dependencies": {
+    
   }
 }

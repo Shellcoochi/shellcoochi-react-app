@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const portfinder = require('portfinder');
 
 module.exports = {
   entry: "./src/index.js",
@@ -27,8 +28,17 @@ module.exports = {
   devtool: 'inline-source-map', 
   devServer: {
     contentBase: path.resolve(__dirname, "../public/"),
-    port: 3000,
-    publicPath: "http://localhost:3000/dist/",
+    port: new Promise((resolve, reject) => {
+      portfinder.getPort({port: 3000,stopPort: 9999 }, (err, port) => {
+        if (port!=3000){
+          console.log('3000端口已被占用，正在使用：' + port+'端口启动程序')
+          resolve(port);
+        }else{
+          reject(3000)
+        }
+      })
+    }),
+    publicPath: "/dist/",
     hot: true
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
