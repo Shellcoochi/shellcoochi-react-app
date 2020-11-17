@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const portfinder = require('portfinder');
+const pkg = require('../package.json');
 
 module.exports = {
   entry: "./src/index.js",
@@ -39,7 +40,16 @@ module.exports = {
       })
     }),
     publicPath: "/dist/",
-    hot: true
+    hot: true,
+	after(){
+		     console.log(`
+			 
+===================================
+      ${pkg.description} 项目
+-----------------------------------
+===================================
+      `);
+	}
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
 };
