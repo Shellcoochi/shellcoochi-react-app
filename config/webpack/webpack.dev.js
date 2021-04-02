@@ -14,6 +14,7 @@ const devConfig = merge(common, {
     contentBase: path.resolve(__dirname, "../../public/"),
     port: DEV_SERVER_PORT,
     publicPath: "/dist/",
+    historyApiFallback: true,//刷新或者手动输入路由地址时，会报 Cannot GET /detail,设置为true
     hot: true,
     after() {
       console.log(`
