@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import "./App.css";
+import styles from "./App.module.css";
 
 const Main = (props) => (
   <div>
@@ -17,7 +17,7 @@ const Main = (props) => (
   </div>
 );
 
-const About = () => <h3>About</h3>;
+const About = () => <h3 className={styles.about}>About</h3>;
 
 const Inbox = (props) => (
   <div>
