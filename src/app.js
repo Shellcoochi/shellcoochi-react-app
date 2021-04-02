@@ -26,6 +26,12 @@ const Inbox = (props) => (
   </div>
 );
 
+const ErrorPage = () => (
+  <div>
+    <h2>页面找不到啦</h2>
+  </div>
+);
+
 const Message = (props) => <h3>Message {props.params.id}</h3>;
 
 const App = () => {
@@ -35,6 +41,7 @@ const App = () => {
         <Route exact path="/" component={Main} />
         <Route exact path="/about" component={About} />
         <Route exact path="/inbox" component={Inbox} />
+        <Route component={ErrorPage}></Route>
       </Switch>
     </Router>
   );
