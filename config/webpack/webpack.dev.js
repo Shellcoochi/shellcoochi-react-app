@@ -4,6 +4,7 @@ const pkg = require("../../package.json");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.config.js");
 const portfinder = require("portfinder");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const { DEV_SERVER_PORT } = require("../env");
 
@@ -14,7 +15,7 @@ const devConfig = merge(common, {
     contentBase: path.resolve(__dirname, "../../public/"),
     port: DEV_SERVER_PORT,
     publicPath: "/dist/",
-    historyApiFallback: true,//刷新或者手动输入路由地址时，会报 Cannot GET /detail,设置为true
+    historyApiFallback: true, //刷新或者手动输入路由地址时，会报 Cannot GET /detail,设置为true
     hot: true,
     after() {
       console.log(`
@@ -26,7 +27,10 @@ const devConfig = merge(common, {
       `);
     },
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin(), //通过clean-webpack-plugin插件删除输出目中之前旧的文件
+  ],
 });
 
 module.exports = new Promise((resolve, reject) => {

@@ -28,7 +28,7 @@ const Inbox = (props) => (
 
 const ErrorPage = () => (
   <div>
-    <h2>页面找不到啦</h2>
+    <h2>页面找不到啦!!</h2>
   </div>
 );
 
