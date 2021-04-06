@@ -5,6 +5,7 @@ const { merge } = require("webpack-merge");
 const common = require("./webpack.config.js");
 const portfinder = require("portfinder");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const { DEV_SERVER_PORT } = require("../env");
 
@@ -30,6 +31,7 @@ const devConfig = merge(common, {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(), //通过clean-webpack-plugin插件删除输出目中之前旧的文件
+    new HtmlWebpackPlugin(), //此插件运行build命令可在输出路径下生成index.html文件，需注意此插件与webpack的版本对应关系
   ],
 });
 
