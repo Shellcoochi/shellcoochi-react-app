@@ -19,7 +19,7 @@ module.exports = {
             loader: "css-loader",
             options: {
               modules: true,
-              localIdentName: "[path][name]-[local]-[hash:base64:5]", //自定义模块化的类名
+              localIdentName: "[path][name]-[local]-[contenthash:base64:5]", //自定义模块化的类名
             },
           },
           { loader: "less-loader" },
@@ -37,6 +37,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "../../dist"),
     publicPath: "/",
-    filename: "bundle.[hash:8].js", //通过哈希值解决JS缓存问题(在没有修改JS要打包的内容时，不会重新打包一个JS文件)
+    filename: "bundle.[contenthash:8].js", //通过哈希值解决JS缓存问题(在没有修改JS要打包的内容时，不会重新打包一个JS文件)
   },
 };
