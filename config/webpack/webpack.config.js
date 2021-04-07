@@ -34,8 +34,8 @@ module.exports = {
     },
   },
   output: {
-    path: path.resolve(__dirname, "../../dist/"),
-    publicPath: "/dist/",
-    filename: "bundle.[hash:8].js",//通过哈希值解决JS缓存问题(在没有修改JS要打包的内容时，不会重新打包一个JS文件)
+    path: path.resolve(__dirname, "../../dist"),
+    publicPath: "/",
+    filename: "bundle.[hash:8].js",//通过哈希值解决JS缓存问题(在没有修改JS要打包的内容时，不会重新打包一个JS文件).[hash:8]
   },
 };
