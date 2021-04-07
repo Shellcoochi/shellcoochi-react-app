@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import styles from "./App.module.css";
+import styles from "./App.module.less";
 
 const Main = (props) => (
   <div>
