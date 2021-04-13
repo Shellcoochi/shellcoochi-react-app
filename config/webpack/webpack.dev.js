@@ -53,6 +53,7 @@ module.exports = new Promise((resolve, reject) => {
       reject(err);
     } else {
       devConfig.devServer.port = port;
+      console.log("项目端口号：" + port);
       resolve(devConfig);
     }
   });
