@@ -25,6 +25,10 @@ module.exports = {
           { loader: "less-loader" },
         ],
       },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",//解决html模板图片图片引用问题
+      },
     ],
   },
   resolve: {
