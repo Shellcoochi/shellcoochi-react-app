@@ -6,6 +6,7 @@ const common = require("./webpack.config.js");
 const portfinder = require("portfinder");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const inquirer = require("inquirer");
 
 const { DEV_SERVER_PORT } = require("../env");
 
@@ -52,9 +53,26 @@ module.exports = new Promise((resolve, reject) => {
     if (err) {
       reject(err);
     } else {
-      devConfig.devServer.port = port;
-      console.log("项目端口号：" + port);
-      resolve(devConfig);
+      if (port !== DEV_SERVER_PORT) {
+        inquirer
+          .prompt([
+            {
+              type: "confirm",
+              message: "是否改为在其他端口上运行应用程序？",
+              name: "watch",
+              prefix: `端口${DEV_SERVER_PORT}已被占用`,
+            },
+          ])
+          .then((answers) => {
+            const { watch } = answers;
+            if (watch) {
+              devConfig.devServer.port = port;
+            }
+            resolve(devConfig);
+          });
+      } else {
+        resolve(devConfig);
+      }
     }
   });
 });
