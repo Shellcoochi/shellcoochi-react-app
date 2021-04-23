@@ -1,4 +1,5 @@
 const path = require("path");
+const env = require("dotenv").config();
 
 module.exports = {
   entry: "./src/index.js",
