@@ -7,6 +7,7 @@ const portfinder = require("portfinder");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const inquirer = require("inquirer");
+const { DEV_SERVER_PORT } = process.env;
 
 const devConfig = merge(common, {
   mode: "development",
@@ -46,7 +47,7 @@ const devConfig = merge(common, {
 });
 
 module.exports = new Promise((resolve, reject) => {
-  portfinder.basePort = process.env.DEV_SERVER_PORT;
+  portfinder.basePort = DEV_SERVER_PORT;
   portfinder.getPort((err, port) => {
     if (err) {
       reject(err);
