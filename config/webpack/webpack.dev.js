@@ -6,6 +6,7 @@ const common = require("./webpack.config.js");
 const portfinder = require("portfinder");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const inquirer = require("inquirer");
 const { DEV_SERVER_PORT } = process.env;
 
@@ -43,6 +44,7 @@ const devConfig = merge(common, {
         removeComments: true,
       },
     }), //此插件运行build命令可在输出路径下生成index.html文件，需注意此插件与webpack的版本对应关系
+    new MiniCssExtractPlugin(),
   ],
 });
 

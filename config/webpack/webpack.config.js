@@ -1,5 +1,6 @@
 const path = require("path");
 const env = require("dotenv").config();
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -14,7 +15,8 @@ module.exports = {
       {
         test: /\.less$/,
         use: [
-          { loader: "style-loader" },
+          MiniCssExtractPlugin.loader,//mini-css-extract-plugin 与 "style-loader"冲突 报错ReferenceError: window is not defined
+          // { loader: "style-loader" },
           {
             //配置CSS module
             loader: "css-loader",
@@ -28,7 +30,7 @@ module.exports = {
       },
       {
         test: /\.html$/i,
-        loader: "html-loader",//解决html模板图片图片引用问题
+        loader: "html-loader", //解决html模板图片图片引用问题
       },
     ],
   },
