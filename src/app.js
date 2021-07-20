@@ -35,6 +35,7 @@ const ErrorPage = () => (
 const Message = (props) => <h3>Message {props.params.id}</h3>;
 
 const App = () => {
+  console.log('console.log')
   return (
     <Router>
       <Switch>
