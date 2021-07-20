@@ -8,3 +8,4 @@ yarn-error.log
 .idea/codeStyles/codeStyleConfig.xml
 .idea/
 dist/
+.DS_Store
